@@ -35,7 +35,7 @@ def BFS(graph, visited, queue):
             return node
 
 class Board:
-    def __init__(self, usr_mark='X', oponent_mode='random'):
+    def __init__(self, usr_mark='X', oponent_mode='Random'):
         self.idle_char = 'I'
         self.board = [[self.idle_char for j in range(3)] for i in range(3)]
         self.graph = {(0, 0): [(0, 1), (1, 1), (1, 0)],
@@ -88,17 +88,17 @@ class Board:
             self.not_available_positions.add(position)
 
     def oponent_move(self):
-        if self.oponent_mode == 'random':
+        if self.oponent_mode == 'Random':
             oponent_position = random.choice(list(self.available_positions))
         elif self.oponent_mode == 'DFS':
             oponent_position = DFS(self.graph, self.not_available_positions, self.stack)
             if oponent_position == None:
-                self.stack.extend(self.graph[(0, 0)])
+                self.stack.extend(self.graph[self.start_position])
                 oponent_position = DFS(self.graph, self.not_available_positions, self.stack)
         elif self.oponent_mode == 'BFS':
             oponent_position = BFS(self.graph, self.not_available_positions, self.queue)
             if oponent_position == None:
-                self.queue.extend(self.graph[(0, 0)])
+                self.queue.extend(self.graph[self.start_position])
                 oponent_position = BFS(self.graph, self.not_available_positions, self.queue)
         
         self.board[oponent_position[0]][oponent_position[1]] = self.oponent_mark
@@ -118,6 +118,7 @@ class TicTacToeGui(QMainWindow):
         self.markerO_count = 0
         self.markerX_count = 0
         self.current_position = (0, 0)
+        self.finished = False
 
         # widgets (buttons, combo box, etc)
         self.buttons = [self.findChild(QPushButton, f"pushButton_{i}") for i in range(9)]
@@ -150,9 +151,10 @@ class TicTacToeGui(QMainWindow):
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Space:
-            button = self.buttons[self.positions[self.current_position]]
-            if self.current_position in self.board.available_positions:
-                self.clicker(button, self.current_position)
+            if self.finished == False:
+                button = self.buttons[self.positions[self.current_position]]
+                if self.current_position in self.board.available_positions:
+                    self.clicker(button, self.current_position)
         elif event.key() == Qt.Key_Up:
             if self.current_position[0] == 0:
                 self.current_position = (self.current_position[0] + 2, self.current_position[1])
@@ -192,7 +194,7 @@ class TicTacToeGui(QMainWindow):
     def change_oponent_mode(self, mode):
         self.setFocus()
         self.board.oponent_mode = mode
-        self.comboMode.setEnabled(False)
+        #self.comboMode.setEnabled(False)
 
     def clicker(self, button, position):
         self.comboMode.setEnabled(False)
@@ -255,6 +257,8 @@ class TicTacToeGui(QMainWindow):
         self.markerO.display(self.markerO_count)
         self.markerX.display(self.markerX_count)
 
+        self.finished = True
+
         msg.exec_()
 
     def disable_buttons(self):
@@ -274,6 +278,7 @@ class TicTacToeGui(QMainWindow):
 
         self.comboMode.setEnabled(True)
         self.comboMark.setEnabled(True)
+        self.finished = False
         self.setFocus()
 
 
