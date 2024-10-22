@@ -75,7 +75,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -100,7 +100,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -125,7 +125,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -152,7 +152,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -177,7 +177,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -202,7 +202,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -227,7 +227,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -252,7 +252,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -277,7 +277,7 @@
        <property name="font">
         <font>
          <family>Ubuntu Mono</family>
-         <pointsize>100</pointsize>
+         <pointsize>80</pointsize>
         </font>
        </property>
        <property name="text">
@@ -364,9 +364,9 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>10</y>
-      <width>21</width>
-      <height>31</height>
+      <y>0</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -383,9 +383,9 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>10</y>
-      <width>21</width>
-      <height>31</height>
+      <y>0</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
