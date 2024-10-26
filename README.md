@@ -26,6 +26,8 @@ install the requirements:
 
 `pip install -r requirements.txt`
 
-play TicTacToe!!:
+run the code:
 
 `python3 main.py` or `python3 TicTacToeAllInOne.py`
+
+enjoy Tic-Tac-Toe!!
