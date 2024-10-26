@@ -28,4 +28,4 @@ install the requirements:
 
 play TicTacToe!!:
 
-`python3 TicTacToe.py`
+`python3 main.py` or `python3 TicTacToeAllInOne.py`
