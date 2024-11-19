@@ -319,6 +319,26 @@
       <string notr="true">GBFS</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>RFC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>XGB</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SVM</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GNB</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLCDNumber" name="markerO">
     <property name="geometry">
