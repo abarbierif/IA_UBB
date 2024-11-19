@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5 import uic
 
 from board import Board
+import random
 
 class TicTacToeGui(QMainWindow):
     def __init__(self):
