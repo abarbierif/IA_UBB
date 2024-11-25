@@ -118,13 +118,16 @@ class Board:
             oponent_position = random.choice(list(self.available_positions))
         elif self.oponent_mode == 'DFS':
             oponent_position = DFS(self.graph, self.not_available_positions, self.stack)
-            if oponent_position == None:
+            if oponent_position is None:
                 self.stack.extend(self.graph[self.start_position])
-                oponent_position = DFS(self.graph, self.not_available_positions, self.stack)
+                #oponent_position = DFS(self.graph, self.not_available_positions, self.stack)
+                oponent_position = random.choice(list(self.available_positions))
         elif self.oponent_mode == 'BFS':
             oponent_position = BFS(self.graph, self.not_available_positions, self.queue)
-            if oponent_position == None:
+            if oponent_position is None:
                 self.queue.extend(self.graph[self.start_position])
+                #oponent_position = BFS(self.graph, self.not_available_positions, self.stack)
+                oponent_position = random.choice(list(self.available_positions))
         elif self.oponent_mode == 'GBFS':
             oponent_position = GBFS(self.graph, self.board, self.not_available_positions, self.usr_mark, self.oponent_mark)
             if oponent_position == None:
@@ -142,7 +145,7 @@ class Board:
             encoded_current_board_state = self.board_encoding(list(self.current_state_board.values()))
             oponent_position = self.predicted_positions[str(self.svm.predict([encoded_current_board_state])[0])]
 
-        
+
         self.board[oponent_position[0]][oponent_position[1]] = self.oponent_mark
         self.available_positions.remove(oponent_position)
         self.not_available_positions.add(oponent_position)

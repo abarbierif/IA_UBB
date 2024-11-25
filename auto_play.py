@@ -1,5 +1,6 @@
 import random
 from board import Board
+import time
 
 def auto_play(oponent_mode, n_games, seed = None):
     """
@@ -48,7 +49,7 @@ def auto_play(oponent_mode, n_games, seed = None):
                 finished = True
                 break
 
-        print(f"Game {game + 1}/{n_games}:")
+        #print(f"Game {game + 1}/{n_games}:")
 
     # Resultados finales
     print("\n=== Results ===")
@@ -59,7 +60,13 @@ def auto_play(oponent_mode, n_games, seed = None):
 
 # Ejecutar simulación
 if __name__ == "__main__":
-    opponent_mode = "GBFS"  # Cambiar a 'Random', 'DFS', 'BFS', 'GBFS', 'XGB', 'GNB', 'SVM', según el caso
+
+    opponent_mode = "DFS"  # Cambiar a 'Random', 'DFS', 'BFS', 'GBFS', 'XGB', 'GNB', 'SVM', según el caso
     n_games = 100  # Número de partidas a simular
     seed = 42
+
+    start_time = time.time()
     auto_play(opponent_mode, n_games, seed)
+    end_time = time.time()
+
+    print(f"time: {round(end_time - start_time,2)}[s]")
